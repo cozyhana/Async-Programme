@@ -1,0 +1,61 @@
+<!-- 并发 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="setUrl()">异步程序同步运行</button>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  let p1 = function () {
+    let res = axios.post('./index', {
+      name: 'index'
+    }).then(function (res) {
+      return res.data
+    }).catch(function (err) {
+      console.log('err:', err)
+    })
+    return res
+  }
+
+  let p2 = function (value) {
+    let res = axios.post('./user', {
+      name: value
+    }).then(function (res) {
+      return res.data
+    }).catch(function (err) {
+      console.log('err:', err)
+    })
+    return res
+  }
+
+  let p3 = function (val1, val2) {
+    axios.post('./pwd', {
+      val1,
+      val2
+    }).then(function (res) {
+      console.log('p3', res)
+    }).catch(function (err) {
+      console.log('err:', err)
+    })
+  }
+
+  async function setUrl() {
+
+    //串行发送
+    let ap1 = await p1();
+    let ap2 = await p2(ap1);
+    //所有接口完成后，才进行下一步操作
+    await p3(ap1, ap2)
+
+  }
+</script>
+
+</html>
