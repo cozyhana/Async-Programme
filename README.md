@@ -61,7 +61,7 @@ $.get(url, data1 => {
  示例代码： `promise.js`
  
 
-## async和await 处理多个相互关联的异步请求
+## async 和 await 处理多个相互关联的异步请求
 
 
 >async 函数，使得异步操作变得更加方便
