@@ -45,21 +45,21 @@
  * -接收的参数为其他类型的时候（包括JavaScript对或null等）: 返回一个将该对象作为值的新promise对象
  */
 
-var taskName = "task 1";
-var obj = {
-  "name": "cozy"
-};
-asyncTask(JSON.stringify(obj)).then(function (result) {
-  console.log("result:", result)
-}).catch(function (error) {
-  console.log("error:", error)
-})
+// var taskName = "task 1";
+// var obj = {
+//   "name": "cozy"
+// };
+// asyncTask(JSON.stringify(obj)).then(function (result) {
+//   console.log("result:", result)
+// }).catch(function (error) {
+//   console.log("error:", error)
+// })
 
-function asyncTask(name) {
-  return Promise.resolve(name).then(function (result) {
-    return "Done!" + result
-  })
-}
+// function asyncTask(name) {
+//   return Promise.resolve(name).then(function (result) {
+//     return "Done!" + result
+//   })
+// }
 
 /**
  * Promise.reject(object)
