@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <h1>所有接口请求成功后，执行操作(适用于loading页)</h1>
+  <h2><span id="load">0</span>%</h2>
+</body>
+<script>
+  window.onload = function () {
+    var load = document.getElementById('load');
+    let p1 = function () {
+      return axios.post('./index', {
+        name: 'index'
+      }).then(function (res) {
+        return res.data
+        load.innerHTML = new Number(load.innerHTML) + 30
+      }).catch(function (err) {
+        console.log('err:', err)
+      })
+    }
+
+    let p2 = function () {
+      return axios.post('./user', {
+        name: 'index'
+      }).then(function (res) {
+        load.innerHTML = new Number(load.innerHTML) + 30
+        return res.data
+      }).catch(function (err) {
+        console.log('err:', err)
+      })
+    }
+
+    let p3 = function () {
+      return axios.post('./pwd', {
+        name: 'index'
+      }).then(function (res) {
+        load.innerHTML = new Number(load.innerHTML) + 30
+        return res.data
+      }).catch(function (err) {
+        console.log('err:', err)
+      })
+    }
+
+    Promise.all([p1(), p2(), p3()])
+      .then(function (results) {
+        load.innerHTML = 100
+      })
+  }
+</script>
+
+</html>
