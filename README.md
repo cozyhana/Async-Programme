@@ -68,7 +68,7 @@ $.get(url, data1 => {
 
 ## 需求
 > - 多个接口串行发送 `index.html`
-> - 所以接口完成后，才进行下一步操作 `promise.html`
+> - 所接口完成后，才进行下一步操作 `promise.html`
 
 
 
