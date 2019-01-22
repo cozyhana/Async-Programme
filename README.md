@@ -67,7 +67,7 @@ $.get(url, data1 => {
 示例：依次次读取两个文件 `async.js`
 
 ## 需求
-> - 多个接口串行发送 `index.html`
+> - 多个接口串行发送 `[index.html](https://github.com/cozyhana/Async-Programme/blob/master/index.html)`
 > - 所有接口完成后，才进行下一步操作 `promise.html`
 
 
