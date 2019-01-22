@@ -56,7 +56,7 @@ $.get(url, data1 => {
 
 >`Pomise.race()`
 
- 示例代码： `promise.js`
+ 示例代码： [promise.js](https://github.com/cozyhana/Async-Programme/blob/master/promise.js)
  
 
 ## async 和 await 结合Promise 使用
@@ -64,11 +64,12 @@ $.get(url, data1 => {
 
 >async 函数是什么？一句话，它就是 Generator 函数的语法糖。
 
-示例：依次次读取两个文件 `async.js`
+示例：依次次读取两个文件 [async.js](https://github.com/cozyhana/Async-Programme/blob/master/async.js)
 
 ## 需求
 > - 多个接口串行发送 [index.html](https://github.com/cozyhana/Async-Programme/blob/master/index.html)
-> - 所有接口完成后，才进行下一步操作 `promise.html`
+> - 所有接口完成后，才进行下一步操作 [promise.html](https://github.com/cozyhana/Async-Programme/blob/master/promise.html)
+
 
 
 
